@@ -1,1 +1,20 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sensor-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sensor-demo
+  template:
+    metadata:
+      labels:
+        app: sensor-demo
+    spec:
+      containers:
+      - name: sensor-demo
+        image: nginx
+        ports:
+        - containerPort: 80
+        imagePullPolicy: IfNotPresent
