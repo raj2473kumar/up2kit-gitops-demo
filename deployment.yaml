@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: sensor-demo
-        image: spindle
+        image: nginx
         ports:
         - containerPort: 80
         imagePullPolicy: IfNotPresent
